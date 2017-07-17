@@ -4,11 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Assignment.Domain.Entities;
+using Assignment.Domain.Abstract;
 
 namespace Assignment.WebUI.Controllers
 {
     public class HomeController : Controller
     {
+        private ICustomerRepository customerRepository;
+
+        public HomeController(ICustomerRepository customerRepository)
+        {
+            this.customerRepository = customerRepository;
+        }
         // GET: Home
         public ViewResult Index()
         {
@@ -24,7 +31,7 @@ namespace Assignment.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                //TODO: Email response to the party organizer.
+                customerRepository.SaveCustomer(customer);
                 return View("Thanks", customer);
             }
             else

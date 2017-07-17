@@ -4,11 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Assignment.Domain.Entities
 {
+    [Table("PERSON_INFO")]
     public class Customer
     {
+        public int CustomerID { get; set; }
+
         [Required(ErrorMessage = "The First Name is required")]
         public string LastName { get; set; }
 

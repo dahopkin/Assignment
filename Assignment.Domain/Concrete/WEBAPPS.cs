@@ -1,14 +1,15 @@
 ﻿using Assignment.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment.Domain.Abstract
+namespace Assignment.Domain.Concrete
 {
-    public interface ICustomerRepository
+    public class WEBAPPS : DbContext
     {
-        void SaveCustomer(Customer customer);
+        public DbSet<Customer> Customers { get; set; }
     }
 }

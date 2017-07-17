@@ -13,10 +13,10 @@ namespace Assignment.Domain.Entities
     {
         public int CustomerID { get; set; }
 
-        [Required(ErrorMessage = "The First Name is required")]
+        [Required(ErrorMessage = "The Last Name is required")]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "The Last Name is required")]
+        [Required(ErrorMessage = "The First Name is required")]
         public string FirstName { get; set; }
 
         [DataType(DataType.Date)]

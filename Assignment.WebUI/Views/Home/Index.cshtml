@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>Index</title>
+    <style>
+        .btn a {color:white; text-decoration: none;}
+        body { background-color: #F1F1F1; }
+    </style>
+</head>
+<body>
+    <div class="text-center"> 
+        <h2>You're going to sign up for insurance!</h2>
+        <h3>I know you're excited, so LET'S GO!</h3>
+        
+        <div class="btn btn-success">
+        @Html.ActionLink("Sign Up Now", "SignUp")
+        </div>
+    </div>
+</body>
+</html>

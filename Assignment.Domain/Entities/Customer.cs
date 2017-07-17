@@ -24,7 +24,7 @@ namespace Assignment.Domain.Entities
         public string EmailAddress { get; set; }
 
         [Required(ErrorMessage = "The Number of Dependents is required")]
-        [Range(0, 50, ErrorMessage = "The Number of Dependents must be between 0 and 50")]
+        [Range(1, 50, ErrorMessage = "The Number of Dependents must be between 1 and 50")]
         public int NumberOfDependents { get; set; }
     }
 }

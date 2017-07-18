@@ -1,9 +1,20 @@
 ﻿@model Assignment.Domain.Entities.Customer
-
+@using System.Net.Mail
 @{
-    Layout = null;
+    try
+    {
+        SmtpClient client = new SmtpClient();
+        MailMessage mailMessage = new MailMessage();
+        mailMessage.From = new MailAddress("prgassn@gmail.com");
+        mailMessage.To.Add(Model.EmailAddress);
+        mailMessage.Subject = "Insurance Signup Complete.";
+        mailMessage.Body = String.Format("{0} {1}, your insurance sign up is complete.", Model.FirstName, Model.LastName);
+    }
+    catch (Exception)
+    {
+        @:<b>Sorry - we couldn't send the email to confirm your Sign up.</b>
+        }
 }
-
 <!DOCTYPE html>
 
 <html>

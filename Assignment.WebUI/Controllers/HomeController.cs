@@ -29,15 +29,23 @@ namespace Assignment.WebUI.Controllers
         [HttpPost]
         public ViewResult SignUp(Customer customer)
         {
-            if (ModelState.IsValid)
+            try
             {
-                customerRepository.SaveCustomer(customer);
-                return View("Thanks", customer);
+                if (ModelState.IsValid)
+                {
+                    customerRepository.SaveCustomer(customer);
+                    return View("Thanks", customer);
+                }
+                else
+                {
+                    //there is a validation error
+                    return View();
+                }
+
             }
-            else
+            catch (Exception)
             {
-                //there is a validation error
-                return View();
+                return View("Error");
             }
         }
     }
